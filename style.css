@@ -1,0 +1,71 @@
+.efekt{
+    margin: 0 auto;
+    font-family: "Segoe UI", sans-serif;
+}
+.resim{
+    display: inline-block;
+    margin: 10px;
+    overflow: hidden;
+    position: relative;
+    opacity: .99;
+    border-radius: 4px;
+    box-shadow: 0 0 20px 0 rgba(0,0,0,0.05);
+}
+.resim:before{
+    content: '';
+    background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.7)100%);
+    background: -webkit-linear-gradient(top, transparent 0%, rgba(0,0,0,0.7)100%);
+    width: 100%;
+    height: 50%;
+    position: absolute;
+    top: 100%;
+    z-index: 2;
+    transition-property: top,opacity;
+    transition-duration: 0.3s;
+}
+
+.resim img{display: block;}
+.detay{
+    font-size: 16px;
+    padding: 20px;
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 3;
+    
+}
+.detay span{
+    display: block;
+    position: relative;
+    top: 100px;
+    transition-property: top, opacity;
+    transition-duration: 0.3s;
+    transition-delay: 0s;
+    
+}
+.baslik{
+    line-height: 1;
+    font-weight: bold;
+    font-size: 18px;
+}
+.bilgi{
+    line-height: 1.2;
+    margin-top: 5px;
+    font-size: 12px;
+}
+.resim:focus:before,.resim:focus span, .resim:hover:before, .resim:hover span{
+    opacity: 1;
+}
+.resim:focus:before,.resim:hover:before{
+    top:50%;
+}
+.resim:focus span,.resim:hover span{
+    top:0;
+}
+.resim:focus .baslik,.resim:hover .baslik{
+    transition-delay: 0.15s;
+}
+.resim:focus .bilgi, .resim:hover .bilgi{
+    transition-delay: 0.25s;
+}
